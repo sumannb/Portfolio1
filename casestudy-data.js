@@ -33,6 +33,7 @@ const caseStudyData = {
     description: 'Brand Guidelines for Metropolitan Premium Cleaning. An overview of the brand, its values, and the design elements that make it unique.',
     images: [
       "images/case2.png",
+      "images/case2.1.jpg"
     ],
   },
   'activist': {
