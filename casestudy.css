@@ -182,6 +182,11 @@ body {
     overflow-y: auto;
 }
 
+/* Hide navbar when modal is active */
+body.modal-open nav {
+    display: none;
+}
+
 .case-study-detail.active {
     display: block;
     opacity: 1;
