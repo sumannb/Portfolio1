@@ -3,115 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Suman Kumari Bohara - Work</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="work.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
-
 <body>
-    <div id="home">
-        <nav>
-            <a class="nav-link" href="index.html">Suman Bohara
-                <span id="line1" class="line"></span>
-                <span id="line2" class="line"></span>
-            </a>
-            <a class="nav-link" href="work.html">Work
-                <span id="line1" class="line"></span>
-                <span id="line2" class="line"></span>
-            </a>
-            <a class="nav-link" href="casestudy.html">Case Study
-                <span id="line1" class="line"></span>
-                <span id="line2" class="line"></span>
-            </a>
-            <a class="nav-link" href="mailto:sumanboharaa@gmail.com">Contact
-                <span id="line1" class="line"></span>
-                <span id="line2" class="line"></span>
-            </a>
-        </nav>
-        
-        <h1 id="head" class="headings">Wor<span class="maz">k</span>s</h1>
+    <nav>
+        <a href="index.html" class="nav-link">Suman Bohara</a>
+        <a href="work.html" class="nav-link footer-active">Work</a>
+        <a href="casestudy.html" class="nav-link">Case Study</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 
-        <div id="works">
-            <img id="img1" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741622541/govherance_qipsho.jpg" alt="">
-            <img id="img2" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621328/artisim_cfxull.jpg" alt="">
-            <img id="img3" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621139/activist_design_ztxnak.jpg" alt="">
-            <img id="img4" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741622288/yifs_gqsac0.jpg" alt="">
-            <img id="img5" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621328/untold_tfctw0.jpg" alt="">
-            <img id="img6" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621140/2_pczfkr.jpg" alt="">
-            <img id="img7" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741623058/social-crime-design-3_khw8gu.jpg" alt="">
-            <img id="img8" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621140/1_q3lztm.jpg" alt="">
-            <img id="img9" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741623130/design-of-stop-tolerhating_pronkt.jpg" alt="">
-            <img id="img10" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621654/avi_z_pizza_ptqpez.png" alt="">
-            <img id="img11" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621139/1_x4maql.png" alt="">
-            <img id="img12" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621139/4_suzem9.jpg" alt="">
-            <img id="img13" src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621140/3_z0jyms.jpg" alt="">
-        </div>
-
-        <div id="footer">
-            <div id="footcnt">
-                <h1>Let's get<br>Connected</h1>
-                <div id="footerbtns">
-                    <div class="footbtn" target="_blank" onclick="window.open('mailto:sumanboharaa@gmail.com', '_blank');" style="cursor:pointer;">
-                        <h5>Write a message</h1>
+    <main id="work-page">
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-timeline">
+                <!-- Current Role -->
+                <div class="experience-card current">
+                    <div class="company-logo">
+                        <img src="https://media.licdn.com/dms/image/v2/C4E0BAQH90JoyxigDwQ/company-logo_100_100/company-logo_100_100/0/1630628520415?e=1749686400&amp;v=beta&amp;t=1-cgdjs4eMKM9MkdENwXyNQweniwWDq4sp-hDcUBAEE" alt="Rights and Responsibilities Awareness Initiative">
                     </div>
-                    <div class="footbtn" target="_blank" onclick="window.open('mailto:sumanboharaa@gmail.com', '_blank');" style="cursor:pointer">
-                        <h5>Collaborate on a Project</h1>
+                    <div class="experience-content">
+                        <h3>Graphic and Motion Designer</h3>
+                        <h4>Rights and Responsibilities Awareness Initiative</h4>
+                        <p class="duration">Sep 2024 - Present · 8 mos</p>
+                        <p class="location">London, Ontario, Canada · Hybrid</p>
                     </div>
                 </div>
-                <div id="footsls">
-                    <div class="footslsrow" target="_blank" onclick="window.open('https://www.behance.net/sumanboharaa', '_blank');" style="cursor:pointer;">
-                        <hr class="slshr">
-                        <div class="slsrowcols">
-                            <h2>Behance<br>
-                                <span>@SumanBohara</span>
-                            </h2>
-                            <img src="./images/behance.png" alt="">
-                            <img id="arrow1" src="./images/arrow-white.png" alt="">
-                        </div>
+
+                <!-- Previous Roles -->
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGT72CnCrwoMA/company-logo_100_100/company-logo_100_100/0/1725035987873?e=1749686400&amp;v=beta&amp;t=2fOZus6Z46qZbRB0-QqqoBq0yT8Avgc4AhLLbQ-pC28" alt="TheLetsGo.App">
                     </div>
-                    <div class="footslsrow" target="_blank" onclick="window.open('https://www.linkedin.com/in/suman-kumari-bohara/', '_blank');" style="cursor:pointer;">
-                        <hr class="slshr">
-                        <div class="slsrowcols">
-                            <h2>LinkedIn<br>
-                                <span>@SumanBohara</span>
-                            </h2>
-                            <img src="./images/linkedin.png" alt="">
-                            <img id="arrow2" src="./images/arrow-white.png" alt="">
-                        </div>
+                    <div class="experience-content">
+                        <h3>UX Designer and Graphic</h3>
+                        <h4>TheLetsGo.App · Contract Part-time</h4>
+                        <p class="duration">Apr 2024 - Present · 1 yr 1 mo</p>
+                        <p class="location">Toronto, Ontario, Canada · Hybrid</p>
                     </div>
-                    <div class="footslsrow" target="_blank" onclick="window.open('https://www.instagram.com/sumann.b/', '_blank');" style="cursor:pointer;">
-                        <hr class="slshr">
-                        <div class="slsrowcols">
-                            <h2>Instagram<br>
-                                <span>@Sumann.b</span>
-                            </h2>
-                            <img src="./images/instagram.png" alt="">
-                            <img id="arrow3" src="./images/arrow-white.png" alt="">
+                </div>
+
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <img src="https://media.licdn.com/dms/image/v2/C560BAQE0R7KjtWbffA/company-logo_100_100/company-logo_100_100/0/1630662444163/accountabilitylab_logo?e=1749686400&amp;v=beta&amp;t=svlDjd5mDOSsmFCwRs4Qt5nBlWXdnvAe55VnKjrZqUI" alt="Accountability Lab">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Communication and Design</h3>
+                        <h4>Accountability Lab · Full-time</h4>
+                        <p class="duration">Jul 2021 - Nov 2023 · 2 yrs 5 mos</p>
+                        <div class="skills">
+                            <span>Idea Person</span>
+                            <span>Design</span>
+                            <span>+9 skills</span>
                         </div>
                     </div>
                 </div>
-                <div id="foot">
-                    <h3>©2025 Suman Bohara, All rights reserved • Credits</h3>
-                    <h3>2025 Portfolio</h3>
+
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <img src="https://media.licdn.com/dms/image/v2/C560BAQF6L-Xp6sGnoQ/company-logo_100_100/company-logo_100_100/0/1669097189351/arbitrarydigitalmarketing_logo?e=1749686400&amp;v=beta&amp;t=NQ5FJ7W6WBFNh4BZWinjWs1tMVBTQp1wHUx0MfiJpQo" alt="Arbitrary Digital Marketing">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Motion Graphic Designer</h3>
+                        <h4>Arbitrary Digital Marketing</h4>
+                        <p class="duration">Oct 2019 - Feb 2021 · 1 yr 5 mos</p>
+                        <div class="skills">
+                            <span>Digital Designs</span>
+                            <span>Interpersonal Skills</span>
+                            <span>+3 skills</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <img src="https://media.licdn.com/dms/image/v2/C510BAQELv4BvSLB22Q/company-logo_100_100/company-logo_100_100/0/1631366759372?e=1749686400&amp;v=beta&amp;t=w6OS7kD4T8N5lAlrQOkftELO5qYa243sOvq2UxkbPAA" alt="Aparajita Group">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Junior Graphic Designer</h3>
+                        <h4>Aparajita Group</h4>
+                        <p class="duration">Apr 2019 - Jul 2019 · 4 mos</p>
+                        <p class="location">Kathmandu</p>
+                        <div class="skills">
+                            <span>Digital Designs</span>
+                            <span>Interpersonal Skills</span>
+                            <span>+1 skill</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div id="footbg">
-                <svg id="c-circle" viewbox="0 0 1254 1254" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="627" cy="627" r="627" fill="url(#paint0_radial_3260_3)"></circle>
-                    <defs>
-                        <radialGradient id="paint0_radial_3260_3" cx="0" cy="0" r="1" gradientunits="userSpaceOnUse" gradienttransform="translate(627) rotate(90) scale(813)">
-                            <stop stop-color="#F3F3F3" stop-opacity="0.45"></stop>
-                            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
-                        </radialGradient>
-                    </defs>
-                </svg>
+        <!-- Design Samples Section -->
+        <section id="design-samples" class="section">
+            <h2 class="section-title">Design Samples</h2>
+            <div class="design-grid">
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741622541/govherance_qipsho.jpg" alt="Governance Design">
+                    <div class="design-overlay">
+                        <h3>Governance Design</h3>
+                        <p>Social Impact</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621328/artisim_cfxull.jpg" alt="Artisim">
+                    <div class="design-overlay">
+                        <h3>Artisim</h3>
+                        <p>Branding</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621139/activist_design_ztxnak.jpg" alt="Activist Design">
+                    <div class="design-overlay">
+                        <h3>Activist Design</h3>
+                        <p>Social Impact</p>
+                    </div>
+                </div>
+                <div class="design-item large">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741622288/yifs_gqsac0.jpg" alt="YIFS">
+                    <div class="design-overlay">
+                        <h3>YIFS</h3>
+                        <p>Branding</p>
+                    </div>
+                </div>
+                <div class="design-item tall">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621328/untold_tfctw0.jpg" alt="Untold">
+                    <div class="design-overlay">
+                        <h3>Untold</h3>
+                        <p>Editorial</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621140/2_pczfkr.jpg" alt="Design 2">
+                    <div class="design-overlay">
+                        <h3>Design 2</h3>
+                        <p>Graphic Design</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741623058/social-crime-design-3_khw8gu.jpg" alt="Social Crime Design">
+                    <div class="design-overlay">
+                        <h3>Social Crime Design</h3>
+                        <p>Social Impact</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621140/1_q3lztm.jpg" alt="Design 1">
+                    <div class="design-overlay">
+                        <h3>Design 1</h3>
+                        <p>Graphic Design</p>
+                    </div>
+                </div>
+                <div class="design-item tall">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741623130/design-of-stop-tolerhating_pronkt.jpg" alt="Stop Tolerating">
+                    <div class="design-overlay">
+                        <h3>Stop Tolerating</h3>
+                        <p>Social Impact</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621654/avi_z_pizza_ptqpez.png" alt="Avi's Pizza">
+                    <div class="design-overlay">
+                        <h3>Avi's Pizza</h3>
+                        <p>Branding</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621139/1_x4maql.png" alt="Design 3">
+                    <div class="design-overlay">
+                        <h3>Design 3</h3>
+                        <p>Graphic Design</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621139/4_suzem9.jpg" alt="Design 4">
+                    <div class="design-overlay">
+                        <h3>Design 4</h3>
+                        <p>Graphic Design</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <img src="https://res.cloudinary.com/dazkqpcy6/image/upload/v1741621140/3_z0jyms.jpg" alt="Design 5">
+                    <div class="design-overlay">
+                        <h3>Design 5</h3>
+                        <p>Graphic Design</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div id="footcnt">
+            <h1>Let's work together</h1>
+            <div id="footerbtns">
+                <a href="contact.html" class="footbtn"><h5>Message me</h5></a>
+                <a href="contact.html" class="footbtn"><h5>Let's collaborate</h5></a>
+            </div>
+            <div id="footsls">
+                <div class="footslsrow" target="_blank" onclick="window.open('https://www.behance.net/sumankumari', '_blank');" style="cursor:pointer;">
+                    <hr class="slshr">
+                    <div class="slsrowcols">
+                        <h2>Behance<br>
+                            <span>@sumankumari</span>
+                        </h2>
+                        <img src="./images/behance.png" alt="">
+                        <img id="arrow1" src="./images/arrow-white.png" alt="">
+                    </div>
+                </div>
+                <div class="footslsrow" target="_blank" onclick="window.open('https://www.linkedin.com/in/suman-kumari-bohara/', '_blank');" style="cursor:pointer;">
+                    <hr class="slshr">
+                    <div class="slsrowcols">
+                        <h2>LinkedIn<br>
+                            <span>@SumanBohara</span>
+                        </h2>
+                        <img src="./images/linkedin.png" alt="">
+                        <img id="arrow2" src="./images/arrow-white.png" alt="">
+                    </div>
+                </div>
+                <div class="footslsrow" target="_blank" onclick="window.open('https://www.instagram.com/sumann.b/', '_blank');" style="cursor:pointer;">
+                    <hr class="slshr">
+                    <div class="slsrowcols">
+                        <h2>Instagram<br>
+                            <span>@Sumann.b</span>
+                        </h2>
+                        <img src="./images/instagram.png" alt="">
+                        <img id="arrow3" src="./images/arrow-white.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="foot">
+                <h3>©2025 Suman Bohara, All rights reserved • Credits</h3>
+                <h3>2025 Portfolio</h3>
             </div>
         </div>
-    </div>
+        <div id="footbg">
+            <svg id="c-circle" viewbox="0 0 1254 1254" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="627" cy="627" r="627" fill="url(#paint0_radial_3260_3)"></circle>
+                <defs>
+                    <radialGradient id="paint0_radial_3260_3" cx="0" cy="0" r="1" gradientunits="userSpaceOnUse" gradienttransform="translate(627) rotate(90) scale(813)">
+                        <stop stop-color="#F3F3F3" stop-opacity="0.45"></stop>
+                        <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="work.js"></script>
 </body>
-
 </html>
