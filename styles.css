@@ -42,6 +42,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #fcfaf8;
+    overflow-x: hidden;
 }
 
 
@@ -75,7 +76,7 @@ a img {outline : none;}
     font-family: "Gilroy-Regular";
     text-align: center;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
 }
 
 #loader h1 {
@@ -87,7 +88,7 @@ a img {outline : none;}
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3vw;
+    font-size: clamp(2rem, 5vw, 4rem);
 }
 
 .reveal .parent {
@@ -117,24 +118,24 @@ a img {outline : none;}
 /* Main Screen */
 
 #home {
-    position: fixed;
-    /* position: relative; */
+    position: relative;
     transition: background-color cubic-bezier(0.19, 1, 0.22, 1) 2s;
     width: 100%;
     background-color: #fcfaf8;
+    min-height: 100vh;
+    padding-bottom: 10vh;
 }
 
 /* Nav Section */
 
 nav {
     position: fixed;
-    top:4vw;
-    display:flex;
+    top: clamp(1.5rem, 4vw, 3rem);
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0vw 7vw;
+    padding: 0 clamp(1.5rem, 7vw, 5rem);
     width: 100%;
-    background-color: red;
     z-index: 9999;
 }
 
@@ -142,7 +143,7 @@ nav a {
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.8vw;
+    font-size: clamp(0.7rem, 1vw, 1rem);
     font-family: 'Gilroy-Medium';
     color: #000000;
     letter-spacing: 0.1vw;
@@ -200,7 +201,7 @@ nav a:hover #line1{
 /* Header Section */
 
 #firstRow{
- margin-top: 12vw;
+    margin-top: clamp(5rem, 12vw, 10rem);
 }
 
 .row{
@@ -209,34 +210,33 @@ nav a:hover #line1{
     align-items: center;
     justify-content: space-between;
     color: #333;
-    padding: 0 7vw;
-    padding-right: 12vw;
+    padding: 0 clamp(1.5rem, 7vw, 5rem);
+    padding-right: clamp(2rem, 12vw, 8rem);
 }
 
 .row h1 {
     font-family: "Gilroy-SemiBold";
-    font-size: 12vw;
+    font-size: clamp(3rem, 12vw, 8rem);
     font-weight: 500;
 }
 
 .row .text h5{
     font-family: "Gilroy-Light";
-    font-size: 0.9vw;
+    font-size: clamp(0.7rem, 1vw, 1rem);
     color: #AD8D9D;
-    line-height: 1.4vw;
+    line-height: 1.4;
 }
 
 .row:nth-child(3) {
     margin-top: -3vw;
-
 }
 
 #svgContainer{
-    width: 15vw;
+    width: clamp(3rem, 15vw, 10rem);
 }
 
 #uxSvg {
-    width: 14vw;
+    width: 100%;
     animation: fill 1s ease forwards 4.8s;
 }
 
@@ -250,9 +250,6 @@ nav a:hover #line1{
     stroke-dashoffset: 1355.4295654296875px;
     animation: line 1s ease forwards 4.3s;
 }
-
-
-
 
 @keyframes line{
     to{
@@ -269,12 +266,8 @@ nav a:hover #line1{
     }
 }
 
-/* path, polyline {
-    stroke: #14cf93;
-} */
-
 #downarrow{
-    width: 4vw;
+    width: clamp(1.5rem, 4vw, 3rem);
 }
 
 #imagery{
@@ -282,9 +275,10 @@ nav a:hover #line1{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 70vh;
-    margin-top: 15vw;
-    padding: 0 7vw;
+    height: auto;
+    min-height: 50vh;
+    margin-top: clamp(5rem, 15vw, 10rem);
+    padding: 0 clamp(1.5rem, 7vw, 5rem);
     z-index: 999;
 }
 
@@ -293,7 +287,7 @@ nav a:hover #line1{
 }
 
 #imgleft h1{
-    font-size: 1.3vw;
+    font-size: clamp(0.9rem, 1.3vw, 1.5rem);
     font-weight: 400;
     color: #333;
     font-family: "Gilroy-Regular";
@@ -301,7 +295,7 @@ nav a:hover #line1{
 }
 
 #imgleft h1 span {
-    font-size: 1.8vw;
+    font-size: clamp(1.2rem, 1.8vw, 2.2rem);
     color: #870A30;
     font-family: "Amperzand";
 }
@@ -354,16 +348,15 @@ nav a:hover #line1{
     transform: translate(35%, 0%) rotate(0deg);
 }
 
-
 #helpWith{
-    margin-top: 12vw;
-    padding: 0 7vw;
+    margin-top: clamp(5rem, 12vw, 10rem);
+    padding: 0 clamp(1.5rem, 7vw, 5rem);
 }
 
 #helpWith h5{
     margin-top: 2.5vw;
     margin-left: 10vw;
-    font-size: 1vw;
+    font-size: clamp(0.7rem, 1vw, 1rem);
     font-family: "Gilroy-Regular";
     color: #AD8D9D;
     text-transform: uppercase;
@@ -372,13 +365,12 @@ nav a:hover #line1{
 #helpWith h3{
     margin-top: 1vw;
     margin-left: 10vw;
-    font-size: 1.2vw;
+    font-size: clamp(0.8rem, 1.2vw, 1.4rem);
     font-family: "Gilroy-Regular";
     color: #202020;
     text-transform: uppercase;
-    line-height: 2vw;
+    line-height: 1.5;
 }
-
 
 hr{
     height: 1px;
@@ -406,7 +398,7 @@ hr{
 #work .workrow {
     display: flex;
     align-items: center;
-    padding: 0 10vw 0 17vw;
+    padding: 0 clamp(2rem, 10vw, 7rem) 0 clamp(3rem, 17vw, 12rem);
     justify-content: space-between;
     color: #333;
 }
@@ -417,13 +409,13 @@ hr{
 }
 
 .headings{
-    font-size: 6vw;
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-family: "Gilroy-Medium";
     letter-spacing: 0.3vw;
 }
 
 .workrow h1 .mini {
-    font-size: 1vw;
+    font-size: clamp(0.7rem, 1vw, 1rem);
     margin-left: 1.5vw;
     font-weight: 700;
 }
@@ -436,11 +428,11 @@ hr{
 }
 
 #helpWith .o-ui-arrow{
-    width: 3vw;
+    width: clamp(1rem, 3vw, 2rem);
 }
 
 #work .o-ui-arrow{
-    width: 3vw;
+    width: clamp(1rem, 3vw, 2rem);
     transform: rotate(90deg);
 }
 
@@ -455,7 +447,7 @@ hr{
     position: relative;
     width: 100%;
     margin-top: 6vw;
-    padding: 0 7vw;
+    padding: 0 clamp(1.5rem, 7vw, 5rem);
 }
 
 .cnt {
@@ -510,19 +502,19 @@ hr{
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 6vw 2vw;
+    padding: clamp(1.5rem, 6vw, 4rem) clamp(1rem, 2vw, 1.5rem);
     z-index: 2;
     font-family: "Gilroy-Regular";
 }
 
 .wrkyear {
     display: inline-block;
-    padding: 1vw;
+    padding: clamp(0.5rem, 1vw, 0.8rem);
     background-color: #f2f2f2df;
     border-radius: 1vw;
     text-align: left;
     margin-bottom: 1vw;
-    font-size: 0.7vw;
+    font-size: clamp(0.6rem, 0.7vw, 0.8rem);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: ease-in-out 0.8s;
 }
@@ -530,19 +522,19 @@ hr{
 .wrkrole {
     display: block;
     width: 90%;
-    padding: 1vw;
+    padding: clamp(0.5rem, 1vw, 0.8rem);
     background-color: #f2f2f2df;
     border-radius: 1vw;
     text-align: left;
     margin-bottom: 1vw;
-    font-size: 0.7vw;
+    font-size: clamp(0.6rem, 0.7vw, 0.8rem);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: ease-in-out 0.8s;
 }
 
 .wrkplace {
     display: inline-block;
-    padding: 1vw;
+    padding: clamp(0.5rem, 1vw, 0.8rem);
     font-family: "Gilroy-SemiBold";
     background-color: #f2f2f2df;
     border-radius: 1vw;
@@ -583,7 +575,7 @@ hr{
 #image3 {
     display: flex;
     justify-content: center;
-    padding: 16vh 7vw;
+    padding: 16vh clamp(1.5rem, 7vw, 5rem);
 }
 
 #images4 {
@@ -592,12 +584,11 @@ hr{
     justify-content: space-between;
     position: relative;
     width: 100%;
-    /* margin-top: 6vw; */
-    padding: 0 7vw;
+    padding: 0 clamp(1.5rem, 7vw, 5rem);
 }
 
 #seeMoreWorks {
-    margin: 5vw 7vw;
+    margin: 5vw clamp(1.5rem, 7vw, 5rem);
     border: 1px solid #dbdbdb;
     border-radius: 5vw;
     padding: 1.3vw;
@@ -612,14 +603,13 @@ hr{
 }
 
 #seeMoreWorks h5 {
-    font-size: 1vw;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
     font-family: "Gilroy-SemiBold";
     color: #333;
 }
 
-
 #cert {
-    margin: 6vw 7vw 10vw 7vw;
+    margin: 6vw clamp(1.5rem, 7vw, 5rem) 10vw clamp(1.5rem, 7vw, 5rem);
 }
 
 #certHead {
@@ -651,14 +641,14 @@ hr{
 .certrow h1{
     width: 60%;
     font-family: "Gilroy-SemiBold";
-    font-size: 1.2vw;
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
 }
 
 .certrow h5{
     width: 30%;
     font-family: "Gilroy-Light";
-    font-size: 1vw;
-    line-height: 1vw;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    line-height: 1.2;
     color: #AD8D9D;
 }
 
@@ -690,7 +680,7 @@ hr{
     background-color: #703A4B;
     color: #f0f0f0;
     text-align: center;
-    padding: 8vw 7vw 2vw 7vw;
+    padding: 8vw clamp(1.5rem, 7vw, 5rem) 2vw clamp(1.5rem, 7vw, 5rem);
     overflow: hidden;
 }
 
@@ -715,8 +705,8 @@ hr{
 
 #footer h1 {
     font-family: "Gilroy-Medium";
-    font-size: 4.5vw;
-    line-height: 6vw;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    line-height: 1.2;
     text-transform: uppercase;
 }
 
@@ -746,7 +736,7 @@ hr{
 
 .footbtn h5{
     font-family: "Gilroy-Medium";
-    font-size: 1vw;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
 }
 
 #footsls{
@@ -779,14 +769,14 @@ hr{
 
 .slsrowcols h2 {
     font-family: "Gilroy-Medium";
-    font-size: 1.2vw;
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
     color: #ffffff;
     transition: ease-in-out 0.5s;
 }
 
 .slsrowcols h2 span{
     font-family: "Gilroy-Regular";
-    font-size: 0.7vw;
+    font-size: clamp(0.6rem, 0.7vw, 0.9rem);
     color: #f1f1f1;
     border-radius: 1vw;
     transition: ease-in-out 0.5s;
@@ -837,7 +827,6 @@ hr{
 #arrow3{
     width: 0%;
     transition: ease-in-out 1s;
-
 }
 
 #foot{
@@ -850,8 +839,333 @@ hr{
 #foot h3 {
     font-family: "Gilroy-Regular";
     font-weight: 400;
-    font-size: 0.7vw;
+    font-size: clamp(0.6rem, 0.7vw, 0.9rem);
     color: #ffebef;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    #imagery {
+        flex-direction: column;
+        height: auto;
+        gap: 3rem;
+    }
+    
+    #imagery #imgleft {
+        width: 100%;
+    }
+    
+    #imgright {
+        width: 100%;
+        height: 40vw;
+    }
+    
+    #imgright .imgcontainer {
+        width: 40vw;
+        height: 60vw;
+    }
+    
+    #imgright .imgcontainer:nth-child(1) {
+        transform: translate(-10%, 0%) rotate(-4deg);
+    }
+    
+    #imgright .imgcontainer:nth-child(2) {
+        transform: translate(20%, 0%) rotate(4deg);
+    }
+    
+    #imgright .imgcontainer:nth-child(1):hover {
+        transform: translate(-30%, 0%) rotate(-4deg);
+    }
+    
+    #helpWith h5, #helpWith h3 {
+        margin-left: 0;
+    }
+    
+    hr {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    
+    #work .workrow {
+        padding: 0 5vw;
+    }
+    
+    #images, #images4 {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .cnt1, .cnt2, .cnt3, .cnt4, .cnt5 {
+        width: 100%;
+        height: 50vh;
+        transform: none !important;
+    }
+    
+    #certcolm {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    #certgfx {
+        width: 50%;
+    }
+    
+    .certrows {
+        width: 100%;
+    }
+    
+    #footerbtns {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footbtn {
+        width: 100%;
+    }
+    
+    #footsls {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        top: 1.5rem;
+        padding: 0 1.5rem;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+    }
+    
+    #firstRow {
+        margin-top: 5rem;
+    }
+    
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 0 1.5rem;
+    }
+    
+    .row h1 {
+        font-size: 3rem;
+    }
+    
+    .row .text {
+        margin-top: 1rem;
+    }
+    
+    #svgContainer {
+        width: 3rem;
+        margin: 1rem 0;
+    }
+    
+    #imgright .imgcontainer {
+        width: 60vw;
+        height: 80vw;
+    }
+    
+    #imgright .imgcontainer:nth-child(1) {
+        transform: translate(-5%, 0%) rotate(-4deg);
+    }
+    
+    #imgright .imgcontainer:nth-child(2) {
+        transform: translate(10%, 0%) rotate(4deg);
+    }
+    
+    #work .workrow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .workrow h1 {
+        font-size: 2.5rem;
+    }
+    
+    .workrow h1 .mini {
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
+    
+    #certgfx {
+        width: 80%;
+    }
+    
+    .certrows .certrow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .certrow h1, .certrow h5 {
+        width: 100%;
+    }
+    
+    #footer {
+        height: auto;
+        padding: 5rem 1.5rem 2rem;
+    }
+    
+    #footer h1 {
+        font-size: 2.5rem;
+    }
+    
+    #foot {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        top: 1rem;
+    }
+    
+    #firstRow {
+        margin-top: 4rem;
+    }
+    
+    .row h1 {
+        font-size: 2.5rem;
+    }
+    
+    #imgright .imgcontainer {
+        width: 80vw;
+        height: 100vw;
+    }
+    
+    #imgright .imgcontainer:nth-child(1) {
+        transform: translate(0%, 0%) rotate(-4deg);
+    }
+    
+    #imgright .imgcontainer:nth-child(2) {
+        transform: translate(0%, 0%) rotate(4deg);
+    }
+    
+    .workrow h1 {
+        font-size: 2rem;
+    }
+    
+    #certgfx {
+        width: 100%;
+    }
+    
+    #footer h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Design Samples Section */
+#design-samples {
+    padding: 8vw 7vw;
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.design-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.design-item:hover {
+    transform: translateY(-5px);
+}
+
+.design-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.design-item:hover img {
+    transform: scale(1.05);
+}
+
+.design-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 2rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.design-item:hover .design-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.design-overlay h3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.design-overlay p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    opacity: 0.8;
+}
+
+.design-item.large {
+    grid-column: span 2;
+}
+
+.design-item.tall {
+    grid-row: span 2;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .design-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .design-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .design-item.large {
+        grid-column: span 1;
+    }
+
+    .design-item.tall {
+        grid-row: span 1;
+    }
+
+    .design-overlay {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .design-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .design-overlay {
+        padding: 1rem;
+    }
 }
 
 

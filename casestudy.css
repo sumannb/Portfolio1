@@ -1,0 +1,711 @@
+/* Case Study Page Styles */
+@font-face {
+    font-family: "Amperzand";
+    src: url(./fonts/Amperzand.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url(./fonts/Gilroy-Regular.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Light";
+    src: url(./fonts/Gilroy-Light.ttf);
+}
+@font-face {
+    font-family: "Gilroy-SemiBold";
+    src: url(./fonts/Gilroy-SemiBold.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url(./fonts/Gilroy-Medium.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url(./fonts/Gilroy-Bold.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Thin";
+    src: url(./fonts/Gilroy-Thin.ttf);
+}
+@font-face {
+    font-family: "Gilroy-UltraLight";
+    src: url(./fonts/Gilroy-UltraLight.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy-Regular", sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #fcfaf8;
+    overflow-x: hidden;
+}
+
+body {
+    color: #000;
+    min-height: 100vh;
+}
+
+#home {
+    width: 100%;
+    min-height: 100vh;
+    padding: 12vw 7vw 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcfaf8;
+}
+
+.line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.headings {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 400;
+    margin-bottom: 4vw;
+    position: relative;
+    font-family: "Gilroy-Regular";
+}
+
+.maz {
+    color: #870A30;
+    font-family: "Gilroy-Bold";
+}
+
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4vw;
+    margin-bottom: 6vw;
+    margin-top: 2vw;
+}
+
+.case-study-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.case-study-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-study-card:hover .case-study-image {
+    transform: scale(1.05);
+}
+
+.case-study-content {
+    padding: 2vw;
+}
+
+.case-study-title {
+    font-size: clamp(1.25rem, 1.5vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 1vw;
+    color: #000;
+    font-family: "Gilroy-SemiBold";
+}
+
+.case-study-description {
+    font-size: clamp(0.875rem, 1vw, 1.25rem);
+    color: #666;
+    margin-bottom: 1.5vw;
+    line-height: 1.6;
+    font-family: "Gilroy-Light";
+}
+
+.case-study-tags {
+    display: flex;
+    gap: 1vw;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.5vw 1vw;
+    background: #f5f5f5;
+    border-radius: 20px;
+    font-size: clamp(0.75rem, 0.8vw, 1rem);
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: "Gilroy-Medium";
+}
+
+.tag:hover {
+    background: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+/* Modal Styles - Completely rebuilt for a seamless experience */
+.case-study-detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+
+.case-study-detail.active {
+    display: block;
+    opacity: 1;
+}
+
+.detail-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 4vw;
+    margin: 5vh auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.case-study-detail.active .detail-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar for the modal content */
+.detail-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.detail-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.detail-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.detail-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Close button styling */
+.close-detail {
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 100001;
+}
+
+.close-detail:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+/* Modal content styling */
+.detail-header {
+    margin-bottom: 4vw;
+}
+
+.detail-title {
+    font-size: clamp(2rem, 3vw, 4rem);
+    margin-bottom: 2vw;
+    font-family: "Gilroy-Bold";
+    color: #000;
+}
+
+.detail-description {
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    color: #666;
+    line-height: 1.6;
+    font-family: "Gilroy-Light";
+    margin-bottom: 3vw;
+}
+
+.detail-images {
+    margin: 4vw 0;
+    display: grid;
+    gap: 2vw;
+}
+
+.detail-images img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+
+.detail-section {
+    margin: 4vw 0;
+    padding: 2vw;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    margin-bottom: 2vw;
+    font-family: "Gilroy-SemiBold";
+    color: #000;
+}
+
+.section-content {
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    line-height: 1.6;
+    color: #333;
+    font-family: "Gilroy-Light";
+}
+
+/* Prevent background scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+#footer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #703A4B;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 8vw 7vw 2vw 7vw;
+    overflow: hidden;
+    margin-top: 6vw;
+    margin-left: -7vw;
+    margin-right: -7vw;
+    width: calc(100% + 14vw);
+}
+
+#footbg {
+    position: absolute;
+    width: 100%;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+#footbg svg {
+    width: 100%;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+#footcnt {
+    width: 100%;
+}
+
+#footer h1 {
+    font-family: "Gilroy-Medium";
+    font-size: 4.5vw;
+    line-height: 6vw;
+    text-transform: uppercase;
+}
+
+#footerbtns {
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+}
+
+.footbtn {
+    width: 50%;
+    margin: 6vw 0;
+    border: 2px solid #ffffff49;
+    border-radius: 5vw;
+    padding: 2vw 0;
+    text-align: center;
+    transition: ease-in-out 0.8s;
+    z-index: 2;
+    color: #fff;
+}
+
+.footbtn:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #f0f0f0;
+}
+
+.footbtn h5 {
+    font-family: "Gilroy-Medium";
+    font-size: 1vw;
+}
+
+#footsls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7vw;
+    z-index: 1;
+}
+
+.footslsrow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 1vw;
+    border-radius: 1vw;
+    z-index: 999;
+    transition: ease-in-out 0.5s;
+}
+
+.slsrowcols {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    transition: ease-in-out 0.5s;
+}
+
+.slsrowcols h2 {
+    font-family: "Gilroy-Medium";
+    font-size: 1.2vw;
+    color: #ffffff;
+    transition: ease-in-out 0.5s;
+}
+
+.slsrowcols h2 span {
+    font-family: "Gilroy-Regular";
+    font-size: 0.7vw;
+    color: #f1f1f1;
+    border-radius: 1vw;
+    transition: ease-in-out 0.5s;
+}
+
+.slshr {
+    width: 70%;
+    height: 1px;
+    margin: 0;
+    transition: ease-in-out 0.5s;
+    border-color: #ffffff49;
+}
+
+.slsrowcols img {
+    width: 8%;
+    transition: ease-in-out 0.5s;
+}
+
+.footslsrow:hover {
+    background-color: #ffffff1d;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.footslsrow:hover #arrow1 {
+    width: 7%;
+}
+.footslsrow:hover #arrow3 {
+    width: 7%;
+}
+.footslsrow:hover #arrow2 {
+    width: 7%;
+}
+.footslsrow:hover .slshr {
+    width: 98%;
+    border-color: #ededed;
+}
+
+#arrow1 {
+    width: 0%;
+    transition: ease-in-out 1s;
+}
+
+#arrow2 {
+    width: 0%;
+    transition: ease-in-out 1s;
+}
+
+#arrow3 {
+    width: 0%;
+    transition: ease-in-out 1s;
+}
+
+#foot {
+    margin-top: 6vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#foot h3 {
+    font-family: "Gilroy-Regular";
+    font-weight: 400;
+    font-size: 0.7vw;
+    color: #ffebef;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #home {
+        padding: 8rem 2rem 2rem;
+    }
+
+    .headings {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .case-studies-grid {
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .case-study-image {
+        height: 250px;
+    }
+
+    .case-study-content {
+        padding: 1.5rem;
+    }
+
+    .case-study-title {
+        font-size: 1.25rem;
+    }
+
+    .case-study-description {
+        font-size: 0.875rem;
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .detail-content {
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .close-detail {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .detail-title {
+        font-size: 1.5rem;
+    }
+
+    .detail-description {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    .section-content {
+        font-size: 0.875rem;
+    }
+
+    #footer {
+        height: auto;
+        padding: 6vw 4vw;
+    }
+
+    #footer h1 {
+        font-size: 8vw;
+        line-height: 10vw;
+    }
+
+    #footerbtns {
+        flex-direction: column;
+        gap: 3vw;
+    }
+
+    .footbtn {
+        width: 100%;
+        margin: 2vw 0;
+        padding: 4vw 0;
+    }
+
+    .footbtn h5 {
+        font-size: 4vw;
+    }
+
+    #footsls {
+        flex-direction: column;
+        gap: 4vw;
+    }
+
+    .slsrowcols h2 {
+        font-size: 4vw;
+    }
+
+    .slsrowcols h2 span {
+        font-size: 3vw;
+    }
+
+    .slsrowcols img {
+        width: 24px;
+    }
+
+    #foot {
+        flex-direction: column;
+        gap: 2vw;
+        text-align: center;
+    }
+
+    #foot h3 {
+        font-size: 3vw;
+    }
+
+    .process-image {
+        max-width: 100%;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1023px) {
+    #home {
+        padding: 10rem 4rem 3rem;
+    }
+
+    .headings {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .case-studies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .case-study-image {
+        height: 300px;
+    }
+
+    .case-study-title {
+        font-size: 1.5rem;
+    }
+
+    .case-study-description {
+        font-size: 1rem;
+    }
+
+    .tag {
+        font-size: 0.875rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    #footer {
+        height: auto;
+        padding: 6vw 5vw;
+    }
+
+    #footer h1 {
+        font-size: 6vw;
+        line-height: 8vw;
+    }
+
+    #footerbtns {
+        flex-wrap: wrap;
+    }
+
+    .footbtn {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footbtn h5 {
+        font-size: 2vw;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+    .headings {
+        font-size: 5rem;
+    }
+
+    .case-study-image {
+        height: 400px;
+    }
+
+    .detail-content {
+        max-width: 1400px;
+    }
+
+    #footer {
+        padding: 6vw 8vw;
+    }
+}
+
+/* Process Section Styles */
+.process-section {
+    margin-bottom: 2rem;
+}
+
+.process-section h3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 1.5rem 0 1rem;
+    color: #703A4B;
+}
+
+.process-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.process-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 1rem 0 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.process-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for process images */
+@media (max-width: 768px) {
+    .process-image {
+        max-width: 100%;
+    }
+} 
