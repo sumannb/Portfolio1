@@ -44,47 +44,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showCaseStudyDetail(caseStudyId) {
-  const detailModal = document.querySelector('.case-study-detail');
-  const detailContent = document.querySelector('.detail-content');
-  const data = caseStudyData[caseStudyId];
+  const modal = document.querySelector('.case-study-detail');
+  const content = modal.querySelector('.detail-content');
+  const caseStudy = caseStudyData[caseStudyId];
 
-  if (!data) {
+  if (!caseStudy) {
     console.error('Case study data not found:', caseStudyId);
     return;
   }
 
-  // Reset content opacity
-  detailContent.style.opacity = '0';
-
-  // Update content
-  detailContent.querySelector('.detail-title').textContent = data.title;
-  detailContent.querySelector('.detail-description').textContent = data.description;
+  // Update modal content
+  content.querySelector('.detail-title').textContent = caseStudy.title;
+  content.querySelector('.detail-description').textContent = caseStudy.description;
 
   // Update images
-  const imagesContainer = detailContent.querySelector('.detail-images');
-  imagesContainer.innerHTML = data.images.map(img =>
-    `<img class="detail-image" src="${img}" alt="${data.title}">`
+  const imagesContainer = content.querySelector('.detail-images');
+  imagesContainer.innerHTML = caseStudy.images.map(img =>
+    `<img src="${img}" alt="${caseStudy.title}">`
   ).join('');
 
   // Update sections
-  const sections = detailContent.querySelectorAll('.section-content');
+  const sections = content.querySelectorAll('.section-content');
   const sectionData = [
-    data.overview,
-    data.process,
-    data.solution,
-    data.results
+    caseStudy.overview,
+    caseStudy.process,
+    caseStudy.solution,
+    caseStudy.results
   ];
 
   sections.forEach((section, index) => {
     section.innerHTML = sectionData[index].replace(/\n/g, '<br>');
   });
 
-  // Show modal
-  detailModal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  // Show modal with animation
+  document.body.classList.add('modal-open');
+  modal.classList.add('active');
+
+  // Scroll to top of modal
+  modal.scrollTop = 0;
 
   // Animate content in
-  gsap.to(detailContent, {
+  gsap.to(content, {
     opacity: 1,
     y: 0,
     duration: 0.5,
@@ -93,18 +93,19 @@ function showCaseStudyDetail(caseStudyId) {
 }
 
 function hideCaseStudyDetail() {
-  const detailModal = document.querySelector('.case-study-detail');
-  const detailContent = document.querySelector('.detail-content');
+  const modal = document.querySelector('.case-study-detail');
+  const content = modal.querySelector('.detail-content');
 
   // Animate content out
-  gsap.to(detailContent, {
+  gsap.to(content, {
     opacity: 0,
-    y: 50,
+    y: 20,
     duration: 0.3,
     ease: 'power3.in',
     onComplete: () => {
-      detailModal.classList.remove('active');
-      document.body.style.overflow = '';
+      // Hide modal
+      modal.classList.remove('active');
+      document.body.classList.remove('modal-open');
     }
   });
 }
@@ -116,13 +117,14 @@ function revealCards() {
   cards.forEach((card, index) => {
     // Set initial state
     gsap.set(card, {
-      opacity: 1,
-      y: 0
+      opacity: 0,
+      y: 50
     });
 
     // Animate in
-    gsap.from(card, {
-      y: 50,
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
       duration: 0.5,
       delay: index * 0.1,
       ease: 'power3.out'
