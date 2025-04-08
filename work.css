@@ -409,6 +409,8 @@ nav a:hover #line1{
     background-color: #fcfaf8;
     padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 7vw, 5rem) 0;
     overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
 }
 
 /* Section Styles */
@@ -416,6 +418,8 @@ nav a:hover #line1{
     margin-bottom: 8rem;
     width: 100%;
     overflow: visible;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -425,6 +429,10 @@ nav a:hover #line1{
     color: #333;
     display: block;
     width: 100%;
+    position: relative;
+    background-color: #fcfaf8;
+    padding: 1rem 0;
+    z-index: 10;
 }
 
 /* Experience Section */
@@ -435,6 +443,10 @@ nav a:hover #line1{
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .experience-card {
@@ -446,6 +458,8 @@ nav a:hover #line1{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .experience-card:hover {
@@ -601,6 +615,16 @@ nav a:hover #line1{
     #work-page {
         padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 3rem) 0;
     }
+    
+    .section-title {
+        position: relative;
+        top: auto;
+    }
+    
+    .experience-timeline {
+        padding-top: 0;
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -615,6 +639,9 @@ nav a:hover #line1{
     .section-title {
         font-size: clamp(1.8rem, 3.5vw, 2.5rem);
         margin-bottom: 2rem;
+        position: relative;
+        top: auto;
+        padding: 0.8rem 0;
     }
 
     .experience-card {
@@ -626,6 +653,11 @@ nav a:hover #line1{
     .company-logo {
         width: 50px;
         height: 50px;
+    }
+    
+    .experience-timeline {
+        padding-top: 0;
+        margin-top: 0;
     }
 
     .portfolio-grid {

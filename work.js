@@ -41,36 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Initialize GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-// Animate section titles
-document.querySelectorAll('.section-title').forEach(title => {
-    gsap.from(title, {
-        scrollTrigger: {
-            trigger: title,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out'
-    });
-});
+// Remove animations for section titles
+// All section titles will be visible by default
 
-// Animate experience cards
-document.querySelectorAll('.experience-card').forEach((card, index) => {
-    gsap.from(card, {
-        scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        delay: index * 0.2,
-        ease: 'power3.out'
-    });
-});
+// Experience cards are now always visible - no animation
+// Removed the animation code for experience cards
 
 // Animate portfolio items
 document.querySelectorAll('.portfolio-item').forEach((item, index) => {
