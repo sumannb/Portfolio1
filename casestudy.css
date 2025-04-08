@@ -1,0 +1,410 @@
+/* Case Study Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy-Regular", sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #fcfaf8;
+}
+
+body {
+    color: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2vw 4vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8vw;
+}
+
+.line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.headings {
+    font-size: 8vw;
+    font-weight: 400;
+    margin-bottom: 4vw;
+    position: relative;
+    font-family: "Gilroy-Regular";
+}
+
+.maz {
+    color: #870A30;
+    font-family: "Gilroy-Bold";
+}
+
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4vw;
+    margin-bottom: 6vw;
+    margin-top: 2vw;
+}
+
+.case-study-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.case-study-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-study-card:hover .case-study-image {
+    transform: scale(1.05);
+}
+
+.case-study-content {
+    padding: 2vw;
+}
+
+.case-study-title {
+    font-size: 1.5vw;
+    font-weight: 600;
+    margin-bottom: 1vw;
+    color: #000;
+    font-family: "Gilroy-SemiBold";
+}
+
+.case-study-description {
+    font-size: 1vw;
+    color: #666;
+    margin-bottom: 1.5vw;
+    line-height: 1.6;
+    font-family: "Gilroy-Light";
+}
+
+.case-study-tags {
+    display: flex;
+    gap: 1vw;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.5vw 1vw;
+    background: #f5f5f5;
+    border-radius: 20px;
+    font-size: 0.8vw;
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: "Gilroy-Medium";
+}
+
+.tag:hover {
+    background: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+.case-study-detail {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 4vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.case-study-detail.active {
+    display: block;
+    opacity: 1;
+}
+
+.detail-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 4vw;
+    border-radius: 12px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    z-index: 10000;
+}
+
+.close-detail {
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    font-size: 2vw;
+    cursor: pointer;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.close-detail:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.detail-header {
+    margin-bottom: 4vw;
+}
+
+.detail-title {
+    font-size: 3vw;
+    margin-bottom: 2vw;
+    font-family: "Gilroy-Bold";
+}
+
+.detail-description {
+    font-size: 1.2vw;
+    line-height: 1.8;
+    color: #666;
+    font-family: "Gilroy-Light";
+}
+
+.detail-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2vw;
+    margin: 4vw 0;
+}
+
+.detail-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.detail-section {
+    margin: 4vw 0;
+}
+
+.section-title {
+    font-size: 1.8vw;
+    margin-bottom: 2vw;
+    color: #870A30;
+    font-family: "Gilroy-SemiBold";
+}
+
+.section-content {
+    font-size: 1.1vw;
+    line-height: 1.8;
+    font-family: "Gilroy-Light";
+}
+
+#footer {
+    position: relative;
+    width: 100%;
+    padding: 4vw;
+    background: #000;
+    color: #fff;
+    margin-top: 6vw;
+    border-radius: 12px;
+    margin-bottom: 4vw;
+}
+
+#footcnt {
+    position: relative;
+    z-index: 2;
+}
+
+#footer h1 {
+    font-family: "Gilroy-Bold";
+    font-size: 3vw;
+    line-height: 1.2;
+}
+
+#footerbtns {
+    display: flex;
+    gap: 2vw;
+    margin: 4vw 0;
+}
+
+.footbtn {
+    padding: 1vw 2vw;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #fff;
+}
+
+.footbtn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.footbtn h5 {
+    font-family: "Gilroy-Medium";
+    font-size: 1vw;
+}
+
+#footsls {
+    margin: 4vw 0;
+}
+
+.footslsrow {
+    display: flex;
+    align-items: center;
+    padding: 2vw 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.footslsrow:hover {
+    opacity: 0.8;
+}
+
+.slshr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slsrowcols {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.slsrowcols h2 {
+    font-family: "Gilroy-SemiBold";
+    font-size: 1.2vw;
+    line-height: 1.2;
+}
+
+.slsrowcols h2 span {
+    font-family: "Gilroy-Light";
+    font-size: 0.9vw;
+    opacity: 0.7;
+}
+
+.slsrowcols img {
+    width: 24px;
+    height: 24px;
+}
+
+#foot {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vw;
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#foot h3 {
+    font-family: "Gilroy-Light";
+}
+
+#footbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#c-circle {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    
+    #home {
+        padding-top: 20vw;
+    }
+    
+    .headings {
+        font-size: 12vw;
+    }
+    
+    .case-study-title {
+        font-size: 4vw;
+    }
+    
+    .case-study-description {
+        font-size: 3vw;
+    }
+    
+    .tag {
+        font-size: 2.5vw;
+        padding: 1vw 2vw;
+    }
+    
+    .detail-title {
+        font-size: 6vw;
+    }
+    
+    .detail-description {
+        font-size: 3vw;
+    }
+    
+    .section-title {
+        font-size: 4vw;
+    }
+    
+    .section-content {
+        font-size: 3vw;
+    }
+
+    #footer h1 {
+        font-size: 6vw;
+    }
+
+    .footbtn h5 {
+        font-size: 3vw;
+    }
+
+    .slsrowcols h2 {
+        font-size: 3vw;
+    }
+
+    .slsrowcols h2 span {
+        font-size: 2.5vw;
+    }
+
+    #foot h3 {
+        font-size: 2.5vw;
+    }
+} 
