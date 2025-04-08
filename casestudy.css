@@ -1,4 +1,37 @@
 /* Case Study Page Styles */
+@font-face {
+    font-family: "Amperzand";
+    src: url(./fonts/Amperzand.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url(./fonts/Gilroy-Regular.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Light";
+    src: url(./fonts/Gilroy-Light.ttf);
+}
+@font-face {
+    font-family: "Gilroy-SemiBold";
+    src: url(./fonts/Gilroy-SemiBold.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Medium";
+    src: url(./fonts/Gilroy-Medium.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url(./fonts/Gilroy-Bold.ttf);
+}
+@font-face {
+    font-family: "Gilroy-Thin";
+    src: url(./fonts/Gilroy-Thin.ttf);
+}
+@font-face {
+    font-family: "Gilroy-UltraLight";
+    src: url(./fonts/Gilroy-UltraLight.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,16 +43,15 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #fcfaf8;
+    overflow-x: hidden;
 }
 
 body {
     color: #000;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 #home {
-    position: fixed;
     width: 100%;
     min-height: 100vh;
     padding: 12vw 7vw 0;
