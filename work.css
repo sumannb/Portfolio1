@@ -2,26 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 html, body {
     width: 100%;
     height: 100%;
     background-color: #fcfaf8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 a img {outline : none;}
 
 .maz {
     color: #870A30;
-    font-family: "Gilroy";
+    font-family: var(--font-semibold);
     font-style: italic;
     font-weight:600;
 }
 
 .headings {
     font-size: 5vw;
-    font-family: "Gilroy-Medium";
+    font-family: var(--font-medium);
     letter-spacing: 0.3vw;
 }
 

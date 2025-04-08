@@ -36,7 +36,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Gilroy-Regular", sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: var(--font-primary);
 }
 
 html, body {
@@ -44,6 +46,9 @@ html, body {
     height: 100%;
     background-color: #fcfaf8;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {

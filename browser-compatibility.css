@@ -1,0 +1,265 @@
+/* Browser Compatibility CSS
+ * This file ensures consistent rendering across all major browsers
+ */
+
+/* CSS Reset and Normalization */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Cross-browser font declarations with fallbacks */
+@font-face {
+  font-family: "Amperzand";
+  src: url("./fonts/Amperzand.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("./fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("./fonts/Gilroy-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("./fonts/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("./fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Thin";
+  src: url("./fonts/Gilroy-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-UltraLight";
+  src: url("./fonts/Gilroy-UltraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font fallback system */
+:root {
+  --font-primary: "Gilroy-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-light: "Gilroy-Light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-medium: "Gilroy-Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-semibold: "Gilroy-SemiBold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-bold: "Gilroy-Bold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-thin: "Gilroy-Thin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-ultralight: "Gilroy-UltraLight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-special: "Amperzand", Georgia, serif;
+}
+
+/* Apply base font family */
+body {
+  font-family: var(--font-primary);
+}
+
+/* Cross-browser box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* Cross-browser transitions */
+.transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Cross-browser transforms */
+.transform {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* Cross-browser flexbox */
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Cross-browser grid */
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+/* Cross-browser appearance */
+.no-appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Cross-browser scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Cross-browser image rendering */
+img {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Cross-browser button styling */
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Cross-browser input styling */
+input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Cross-browser focus styling */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #870A30;
+  outline-offset: 2px;
+}
+
+/* Cross-browser selection styling */
+::selection {
+  background: #870A30;
+  color: #fff;
+}
+
+/* Cross-browser placeholder styling */
+::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Cross-browser media query support */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Webkit-specific styles */
+}
+
+@media screen and (-moz-min-device-pixel-ratio: 0) {
+  /* Firefox-specific styles */
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* IE-specific styles */
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+} 
