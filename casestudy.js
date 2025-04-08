@@ -54,26 +54,49 @@ function showCaseStudyDetail(caseStudyId) {
   }
 
   // Update modal content
-  content.querySelector('.detail-title').textContent = caseStudy.title;
-  content.querySelector('.detail-description').textContent = caseStudy.description;
+  content.querySelector('.detail-title').textContent = caseStudy.title || '';
+  content.querySelector('.detail-description').textContent = caseStudy.description || '';
 
   // Update images
   const imagesContainer = content.querySelector('.detail-images');
-  imagesContainer.innerHTML = caseStudy.images.map(img =>
-    `<img src="${img}" alt="${caseStudy.title}">`
-  ).join('');
+  if (caseStudy.images && caseStudy.images.length > 0) {
+    imagesContainer.innerHTML = caseStudy.images.map(img =>
+      `<img src="${img}" alt="${caseStudy.title || 'Case study image'}">`
+    ).join('');
+  } else {
+    imagesContainer.innerHTML = '<p>No images available</p>';
+  }
 
-  // Update sections
-  const sections = content.querySelectorAll('.section-content');
+  // Update sections and hide empty ones
+  const sections = content.querySelectorAll('.detail-section');
   const sectionData = [
-    caseStudy.overview,
-    caseStudy.process,
-    caseStudy.solution,
-    caseStudy.results
+    { title: 'Overview', content: caseStudy.overview },
+    { title: 'Process', content: caseStudy.process },
+    { title: 'Solution', content: caseStudy.solution },
+    { title: 'Results', content: caseStudy.results }
   ];
 
   sections.forEach((section, index) => {
-    section.innerHTML = sectionData[index].replace(/\n/g, '<br>');
+    const sectionContent = section.querySelector('.section-content');
+    const sectionTitle = section.querySelector('.section-title');
+
+    // Check if the section has content
+    if (sectionData[index].content) {
+      // Show the section
+      section.style.display = 'block';
+
+      // Update the content
+      if (sectionData[index].content.trim().startsWith('<')) {
+        // If it's HTML, set it directly
+        sectionContent.innerHTML = sectionData[index].content;
+      } else {
+        // Otherwise, use the existing text replacement
+        sectionContent.innerHTML = sectionData[index].content.replace(/\n/g, '<br>');
+      }
+    } else {
+      // Hide the section if it has no content
+      section.style.display = 'none';
+    }
   });
 
   // Show modal with animation

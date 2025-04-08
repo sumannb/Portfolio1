@@ -276,9 +276,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-.detail-images img:hover {
-    transform: scale(1.02);
-}
 
 .detail-section {
     margin: 4vw 0;
@@ -594,6 +591,10 @@ body.modal-open {
     #foot h3 {
         font-size: 3vw;
     }
+
+    .process-image {
+        max-width: 100%;
+    }
 }
 
 /* Tablet Styles */
@@ -669,5 +670,42 @@ body.modal-open {
 
     #footer {
         padding: 6vw 8vw;
+    }
+}
+
+/* Process Section Styles */
+.process-section {
+    margin-bottom: 2rem;
+}
+
+.process-section h3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 1.5rem 0 1rem;
+    color: #703A4B;
+}
+
+.process-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.process-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 1rem 0 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.process-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for process images */
+@media (max-width: 768px) {
+    .process-image {
+        max-width: 100%;
     }
 } 
