@@ -156,13 +156,15 @@ a img {outline : none;}
 
 nav {
     position: fixed;
-    top:4vw;
+    top:0;
     display:flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0vw 7vw;
+    padding: 4vw 7vw 2vw 7vw;
     width: 100%;
     z-index: 9999;
+    background-color: #e1e1e1;
+    opacity: 0.7;
 }
 
 nav a {
