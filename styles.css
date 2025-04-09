@@ -220,17 +220,20 @@ nav a:hover #line1{
 .row{
     display: flex;
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end;
+    justify-content: flex-start;
     color: #333;
     padding: 0 clamp(1.5rem, 7vw, 5rem);
     padding-right: clamp(2rem, 12vw, 8rem);
+    gap: 2vw;
 }
 
 .row h1 {
     font-family: "Gilroy-SemiBold";
     font-size: clamp(3rem, 12vw, 8rem);
     font-weight: 500;
+    line-height: 1;
+    margin-top: 0;
 }
 
 .row .text h5{
@@ -246,6 +249,7 @@ nav a:hover #line1{
 
 #svgContainer{
     width: clamp(3rem, 15vw, 10rem);
+    margin-right: -5vw;
 }
 
 #uxSvg {
@@ -944,6 +948,19 @@ hr{
         flex-direction: column;
         gap: 2rem;
     }
+
+    .row {
+        justify-content: flex-start;
+        gap: 1vw;
+    }
+    
+    .row h1 {
+        margin-top: 0;
+    }
+    
+    #svgContainer {
+        margin-right: -3vw;
+    }
 }
 
 @media (max-width: 768px) {
@@ -970,16 +987,12 @@ hr{
     }
     
     .row h1 {
-        font-size: 3rem;
-    }
-    
-    .row .text {
-        margin-top: 1rem;
+        margin-top: 0;
     }
     
     #svgContainer {
-        width: 3rem;
-        margin: 1rem 0;
+        margin-right: 0;
+        margin-bottom: -2rem;
     }
     
     #imagery {
@@ -1080,6 +1093,10 @@ hr{
 
     #imgleft h1 span {
         font-size: 1.4rem;
+    }
+
+    #local-time {
+        display: none;
     }
 
     #imgright {
@@ -1235,6 +1252,29 @@ hr{
     .section-title {
         font-size: clamp(1.5rem, 3vw, 2rem);
         margin-bottom: 1.5rem;
+    }
+}
+
+#designer-row {
+    position: relative;
+    z-index: 2;
+    margin-top: 2rem;
+}
+
+#designer-row h1 {
+    font-size: clamp(3rem, 5vw, 5rem);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    #designer-row {
+        margin-top: 1rem;
+    }
+    
+    #designer-row h1 {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
     }
 }
 
