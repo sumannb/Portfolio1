@@ -73,7 +73,7 @@ function loadingAnimation(){
         ease: Power3.easeOut,
     })
     .to("nav", {
-        opacity: 1,
+        opacity: 0.7,
         delay: -1
     })
     .to("#home",{
