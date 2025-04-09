@@ -283,7 +283,7 @@ nav a:hover #line1{
     width: clamp(1.5rem, 4vw, 3rem);
 }
 
-#imagery{
+#imagery {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -293,10 +293,13 @@ nav a:hover #line1{
     margin-top: clamp(5rem, 15vw, 10rem);
     padding: 0 clamp(1.5rem, 7vw, 5rem);
     z-index: 999;
+    position: relative;
 }
 
-#imagery #imgleft{
+#imagery #imgleft {
     width: 35%;
+    position: relative;
+    z-index: 2;
 }
 
 #imgleft h1{
@@ -320,6 +323,7 @@ nav a:hover #line1{
     position: relative;    
     width: 60%;
     height: 20vw;
+    z-index: 1;
 }
 
 #imgright .imgcontainer {
@@ -860,36 +864,36 @@ hr{
 @media (max-width: 1024px) {
     #imagery {
         flex-direction: column;
-        height: auto;
+        align-items: flex-start;
         gap: 3rem;
+        margin-top: 4rem;
     }
-    
+
     #imagery #imgleft {
         width: 100%;
+        order: 2;
     }
-    
+
     #imgright {
         width: 100%;
-        height: 40vw;
+        height: auto;
+        order: 1;
     }
-    
+
     #imgright .imgcontainer {
-        width: 40vw;
+        width: 45vw;
         height: 60vw;
+        position: relative;
     }
-    
+
     #imgright .imgcontainer:nth-child(1) {
-        transform: translate(-10%, 0%) rotate(-4deg);
+        transform: translate(-5%, 0%) rotate(-4deg);
     }
-    
+
     #imgright .imgcontainer:nth-child(2) {
-        transform: translate(20%, 0%) rotate(4deg);
+        transform: translate(5%, 0%) rotate(4deg);
     }
-    
-    #imgright .imgcontainer:nth-child(1):hover {
-        transform: translate(-30%, 0%) rotate(-4deg);
-    }
-    
+
     #helpWith h5, #helpWith h3 {
         margin-left: 0;
     }
@@ -978,17 +982,31 @@ hr{
         margin: 1rem 0;
     }
     
-    #imgright .imgcontainer {
-        width: 60vw;
+    #imagery {
+        gap: 2rem;
+        margin-top: 3rem;
+        padding: 0 2rem;
+    }
+
+    #imagery #imgleft {
+        width: 100%;
+        order: 2;
+    }
+
+    #imgright {
+        width: 100%;
         height: 80vw;
+        order: 1;
     }
-    
+
+    #imgright .imgcontainer {
+        width: 100%;
+        height: 80vw;
+        transform: none !important;
+    }
+
     #imgright .imgcontainer:nth-child(1) {
-        transform: translate(-5%, 0%) rotate(-4deg);
-    }
-    
-    #imgright .imgcontainer:nth-child(2) {
-        transform: translate(10%, 0%) rotate(4deg);
+        margin-bottom: 2rem;
     }
     
     #work .workrow {
@@ -1049,21 +1067,33 @@ hr{
         font-size: 2.5rem;
     }
     
+    #imagery {
+        padding: 0 1rem;
+        margin-top: 2rem;
+        gap: 1.5rem;
+    }
+
+    #imgleft h1 {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    #imgleft h1 span {
+        font-size: 1.4rem;
+    }
+
+    #imgright {
+        height: auto;
+    }
+
     #imgright .imgcontainer {
-        width: 80vw;
-        height: 100vw;
+        width: 100%;
+        height: 90vw;
+        margin: 0;
     }
-    
+
     #imgright .imgcontainer:nth-child(1) {
-        transform: translate(0%, 0%) rotate(-4deg);
-    }
-    
-    #imgright .imgcontainer:nth-child(2) {
-        transform: translate(0%, 0%) rotate(4deg);
-    }
-    
-    .workrow h1 {
-        font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
     
     #certgfx {
