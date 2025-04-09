@@ -1082,6 +1082,10 @@ hr{
         font-size: 1.4rem;
     }
 
+    #local-time {
+        display: none;
+    }
+
     #imgright {
         height: auto;
     }
