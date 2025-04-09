@@ -167,25 +167,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".nav-link");
     const footer = document.querySelector("#footbg");
 
+    // Store the initially active link
+    const activeLink = document.querySelector(".nav-link.footer-active");
+
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     // Change nav links color when #footer is in view
                     navLinks.forEach((link) => {
-                    link.classList.add("footer-active")
-                    link.childNodes.forEach(function(line){
-                        line.classList = "footer-activeLine"
-                    })
+                        // Don't override the static active link
+                        if (link !== activeLink) {
+                            link.classList.add("footer-active");
+                            link.childNodes.forEach(function (line) {
+                                line.classList = "footer-activeLine";
+                            });
+                        }
                     });
                 } else {
-                    // Reset when footer is out of view
+                    // Reset when footer is out of view, but preserve the active link
                     navLinks.forEach((link) => {
-                        link.classList.remove("footer-active")
-                        link.childNodes.forEach(function(line){
-                            line.classList = "line"
-                        })
-                });
+                        // Don't remove the class from the static active link
+                        if (link !== activeLink) {
+                            link.classList.remove("footer-active");
+                            link.childNodes.forEach(function (line) {
+                                line.classList = "line";
+                            });
+                        }
+                    });
                 }
             });
         },
