@@ -18,7 +18,8 @@ const caseStudyData = {
         - Users found the dashboard intuitive and easy to follow.
         - Personalized recommendations were viewed as helpful and motivating.
         - The educational aspect helped demystify credit improvement.
-`
+`,
+    portfolioLink: "https://www.behance.net/gallery/220994589/Improving-Credit-Card-Payments-A-UX-Case-Study-Design"
   },
   'metropolitan': {
     title: 'Metropolitan Premier Cleaning',
@@ -27,9 +28,10 @@ const caseStudyData = {
       "images/metropolitan.png",
     ],
     overview: `Metropolitan Premier Cleaning is a newly established professional cleaning service that emphasizes quality, affordability, and brand trust. This branding project focused on creating a distinctive and modern identity that reflects the company's commitment to excellence in commercial and residential cleaning.`,
-    process: `The design process began by identifying the brand’s core values: reliability, cleanliness, and professionalism. A bold yet elegant visual identity was developed, supported by clear guidelines for typography, color, and logo construction. Applications across merchandise and digital media were also explored to ensure brand consistency.`,
-    solution: `A striking logo combining an abstract skyline and the letter “M” was created to represent both the metropolitan focus and the nature of the cleaning service. The Futura typeface was chosen for its clarity and modernity. A bold color palette—featuring gold (DE9D0E), black (212121), and white—was implemented to evoke a sense of luxury and professionalism.`,
-    results: `The final brand system was applied across various touchpoints including business cards, uniforms, mugs, calendars, tote bags, and pens, creating a cohesive and recognizable identity. The visual identity not only enhances brand visibility but also communicates a strong, trustworthy image to potential clients.`
+    process: `The design process began by identifying the brand's core values: reliability, cleanliness, and professionalism. A bold yet elegant visual identity was developed, supported by clear guidelines for typography, color, and logo construction. Applications across merchandise and digital media were also explored to ensure brand consistency.`,
+    solution: `A striking logo combining an abstract skyline and the letter "M" was created to represent both the metropolitan focus and the nature of the cleaning service. The Futura typeface was chosen for its clarity and modernity. A bold color palette—featuring gold (DE9D0E), black (212121), and white—was implemented to evoke a sense of luxury and professionalism.`,
+    results: `The final brand system was applied across various touchpoints including business cards, uniforms, mugs, calendars, tote bags, and pens, creating a cohesive and recognizable identity. The visual identity not only enhances brand visibility but also communicates a strong, trustworthy image to potential clients.`,
+    portfolioLink: "https://www.behance.net/gallery/221105955/Metropolitan-Premier-cleaning"
   },
   rrai: {
     title: 'RRAI (Rights and Responsibilities Awareness Initiative)',
@@ -50,13 +52,14 @@ const caseStudyData = {
         - 5,470 session attendees with 91.7% reporting increased knowledge
         - 324 multilingual videos garnering 22,192 views
         - Successful outreach to diverse communities including francophone populations
-`
+`,
+    portfolioLink: "https://www.behance.net/gallery/212383129/STOP-TOLERHATING"
   },
   hackathon: {
-    title: 'CICan Hackathon – Inclusive Platform Redesign',
+    title: 'CICan Hackathon - Inclusive Platform Redesign',
     description: 'Team Access Granted redesigned a government reskilling platform to support users with diverse digital skills and accessibility needs. Using WCAG guidelines and human-centered design, the team improved navigation, visual clarity, screen reader compatibility, and personalized learning paths. Work included UX research, persona development, ideation in FigJam, and prototyping in Figma',
     images: [
-      "images/hackathon.png",
+      "images/hackathon-full.png",
     ],
     overview: `"Access Granted" was a winning team project at the CICan Hackathon hosted by Fanshawe College, focused on enhancing the usability and equity of a digital career navigation tool for users with diverse digital literacy and accessibility needs. The project aimed to create a more inclusive, intuitive, and user-friendly platform aligned with human-centered design principles.`,
     process: `<div>
@@ -82,7 +85,8 @@ Each section—from homepage to reskilling flow and demographic entry—was desi
         - Recognized for inclusive UX practices and practical UI enhancements
         - Showcased a working clickable prototype that mapped the full user journey
         - Empowered diverse learners by enabling easier access to relevant education and career paths
-`
+`,
+    portfolioLink: ""
   },
   financial: {
     title: 'Financial Management Dashboard Redesign',
@@ -111,7 +115,8 @@ Each section—from homepage to reskilling flow and demographic entry—was desi
         - Achieved AI-enhanced insights that support more personalized advisor-client interactions.
         - Ensured visual efficiency by reducing data density while preserving decision-making value.
         - Maintained authenticity in advisor guidance by balancing automation with human expertise.
-`
+`,
+    portfolioLink: "https://www.behance.net/gallery/224054545/Financial-Management-Dashboard-Redesign"
   },
   'activist': {
     title: 'Activist Design',
@@ -134,6 +139,7 @@ Each section—from homepage to reskilling flow and demographic entry—was desi
     results: `The campaign achieved:
         - 2M+ social media impressions
         - 50% increase in community engagement
-        - Recognition from leading design publications`
+        - Recognition from leading design publications`,
+    portfolioLink: "https://www.behance.net/gallery/183387601/Artivism-powering-creative-voices-for-democracy"
   }
 }; 
