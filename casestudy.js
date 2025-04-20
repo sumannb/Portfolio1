@@ -1,12 +1,5 @@
 // Case Study Page JavaScript
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Locomotive Scroll
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector('#home'),
-    smooth: true,
-    lerp: 0.05
-  });
-
   // Case Study Cards Animation
   const cards = document.querySelectorAll('.case-study-card');
   cards.forEach(card => {
@@ -52,6 +45,12 @@ function showCaseStudyDetail(caseStudyId) {
     console.error('Case study data not found:', caseStudyId);
     return;
   }
+
+  // Store current scroll position
+  const scrollPosition = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPosition}px`;
+  document.body.style.width = '100%';
 
   // Update modal content
   content.querySelector('.detail-title').textContent = caseStudy.title || '';
@@ -99,38 +98,28 @@ function showCaseStudyDetail(caseStudyId) {
     }
   });
 
-  // Show modal with animation
+  // Show modal
   document.body.classList.add('modal-open');
   modal.classList.add('active');
 
   // Scroll to top of modal
-  modal.scrollTop = 0;
-
-  // Animate content in
-  gsap.to(content, {
-    opacity: 1,
-    y: 0,
-    duration: 0.5,
-    ease: 'power3.out'
-  });
+  content.scrollTop = 0;
 }
 
 function hideCaseStudyDetail() {
   const modal = document.querySelector('.case-study-detail');
   const content = modal.querySelector('.detail-content');
+  const scrollPosition = parseInt(document.body.style.top.replace('-', '')) || 0;
 
-  // Animate content out
-  gsap.to(content, {
-    opacity: 0,
-    y: 20,
-    duration: 0.3,
-    ease: 'power3.in',
-    onComplete: () => {
-      // Hide modal
-      modal.classList.remove('active');
-      document.body.classList.remove('modal-open');
-    }
-  });
+  // Hide modal
+  modal.classList.remove('active');
+  document.body.classList.remove('modal-open');
+
+  // Restore scroll position
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, scrollPosition);
 }
 
 // Reveal animations for case study cards
