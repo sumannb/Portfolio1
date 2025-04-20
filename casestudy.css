@@ -493,8 +493,15 @@ body.modal-open nav {
     }
 
     .case-studies-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
         margin-bottom: 4rem;
+        padding: 0 1rem;
+    }
+
+    .case-study-card {
+        width: 100%;
+        max-width: 100%;
     }
 
     .case-study-image {
