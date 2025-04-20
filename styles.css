@@ -225,10 +225,19 @@ nav a:hover #line1{
 #firstRow {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     padding: 0 7vw;
     margin-top: 15vw;
     gap: 5vw;
+}
+
+#firstRow h1 {
+    font-family: "Gilroy-SemiBold";
+    font-size: clamp(3rem, 12vw, 8rem);
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 #firstRow .text {
@@ -236,6 +245,7 @@ nav a:hover #line1{
     flex-direction: column;
     gap: 0.5vw;
     min-width: 200px;
+    justify-content: center;
 }
 
 #firstRow .text h5 {
@@ -243,6 +253,8 @@ nav a:hover #line1{
     font-size: clamp(0.7rem, 1.5vw, 1rem);
     text-transform: uppercase;
     white-space: nowrap;
+    margin: 0;
+    padding: 0;
 }
 
 #local-time {
@@ -1011,6 +1023,7 @@ hr{
     
     #firstRow {
         flex-direction: column;
+        align-items: flex-start;
         gap: 3rem;
         margin-top: 10rem;
     }
@@ -1018,9 +1031,16 @@ hr{
     #firstRow .text {
         gap: 0.5rem;
         min-width: auto;
+        margin-top: 0;
+        order: 1;
+    }
+
+    #firstRow h1 {
+        order: 2;
     }
 
     #local-time {
+        display: flex;
         margin-left: 0;
         min-width: auto;
     }
@@ -1124,8 +1144,59 @@ hr{
         padding: 10px 12px;
     }
     
+    #firstRow .text {
+        display: none;
+    }
+    
+    .mobile-local-time {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 2rem;
+        order: 3;
+        width: 100%;
+        padding: 0 1rem;
+        border: none;
+        align-items: flex-end;
+        background: none;
+        box-shadow: none;
+    }
+    
+    .mobile-local-time h5 {
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-weight: 400;
+        color: #333;
+        line-height: 1.5;
+        margin: 0;
+        text-transform: uppercase;
+        font-family: "Gilroy-Regular";
+        text-align: right;
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+    
     #firstRow {
-        margin-top: 4rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+        margin-top: 10rem;
+    }
+
+    #firstRow h1 {
+        order: 1;
+    }
+
+    #designer-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        order: 2;
+    }
+    
+    #downarrow {
+        order: 2;
+        margin-top: 1rem;
     }
     
     .row h1 {
@@ -1145,10 +1216,6 @@ hr{
 
     #imgleft h1 span {
         font-size: 1.4rem;
-    }
-
-    #local-time {
-        display: none;
     }
 
     #imgright {
@@ -1326,6 +1393,85 @@ hr{
     
     #designer-row h1 {
         font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+}
+
+/* Mobile-only local-time div */
+.mobile-local-time {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    #local-time {
+        display: none;
+    }
+    
+    .mobile-local-time {
+        display: flex;
+    }
+    
+    #firstRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+        margin-top: 10rem;
+    }
+
+    #firstRow h1 {
+        order: 1;
+    }
+
+    #designer-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        order: 2;
+    }
+    
+    #downarrow {
+        order: 2;
+        margin-top: 1rem;
+    }
+    
+    .row h1 {
+        font-size: 2.5rem;
+    }
+    
+    #imagery {
+        padding: 0 1rem;
+        margin-top: 2rem;
+        gap: 1.5rem;
+    }
+
+    #imgleft h1 {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    #imgleft h1 span {
+        font-size: 1.4rem;
+    }
+
+    #imgright {
+        height: auto;
+    }
+
+    #imgright .imgcontainer {
+        width: 100%;
+        height: 90vw;
+        margin: 0;
+    }
+
+    #imgright .imgcontainer:nth-child(1) {
+        margin-bottom: 1.5rem;
+    }
+    
+    #certgfx {
+        width: 100%;
+    }
+    
+    #footer h1 {
+        font-size: 2rem;
     }
 }
 
