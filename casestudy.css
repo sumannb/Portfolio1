@@ -93,7 +93,7 @@ body {
 
 .case-studies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 4vw;
     margin-bottom: 6vw;
     margin-top: 2vw;
@@ -167,7 +167,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Modal Styles - Completely rebuilt for a seamless experience */
+/* Modal Styles */
 .case-study-detail {
     position: fixed;
     top: 0;
@@ -177,26 +177,12 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     display: none;
     z-index: 99999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(5px);
     overflow-y: auto;
-}
-
-/* Hide navbar when modal is active - using higher specificity */
-body.modal-open nav,
-.case-study-detail.active ~ nav,
-.case-study-detail.active + nav,
-body:has(.case-study-detail.active) nav {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+    -webkit-overflow-scrolling: touch;
 }
 
 .case-study-detail.active {
     display: block;
-    opacity: 1;
 }
 
 .detail-content {
@@ -207,15 +193,9 @@ body:has(.case-study-detail.active) nav {
     border-radius: 12px;
     padding: 4vw;
     margin: 5vh auto;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-.case-study-detail.active .detail-content {
-    opacity: 1;
-    transform: translateY(0);
+    overflow-y: auto;
+    max-height: 90vh;
 }
 
 /* Custom scrollbar for the modal content */
@@ -249,7 +229,7 @@ body:has(.case-study-detail.active) nav {
     justify-content: center;
     font-size: 2rem;
     color: #000;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -257,8 +237,20 @@ body:has(.case-study-detail.active) nav {
 }
 
 .close-detail:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     transform: rotate(90deg);
+}
+
+/* Prevent background scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Hide navbar when modal is active */
+body.modal-open nav {
+    display: none;
 }
 
 /* Modal content styling */
@@ -313,11 +305,6 @@ body:has(.case-study-detail.active) nav {
     line-height: 1.6;
     color: #333;
     font-family: "Gilroy-Light";
-}
-
-/* Prevent background scrolling when modal is open */
-body.modal-open {
-    overflow: hidden;
 }
 
 #footer {
@@ -506,8 +493,15 @@ body.modal-open {
     }
 
     .case-studies-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
         margin-bottom: 4rem;
+        padding: 0 1rem;
+    }
+
+    .case-study-card {
+        width: 100%;
+        max-width: 100%;
     }
 
     .case-study-image {
@@ -764,4 +758,33 @@ nav a .line {
     width: 100%;
     height: 1.5px;
     background-color: black;
+}
+
+.portfolio-link-container {
+    margin: 2vw 0;
+}
+
+.portfolio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5vw;
+    padding: 0.8vw 1.5vw;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: "Gilroy-Medium";
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    transition: all 0.3s ease;
+}
+
+.portfolio-link:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.portfolio-link svg {
+    width: 1.2vw;
+    height: 1.2vw;
+    fill: currentColor;
 } 
