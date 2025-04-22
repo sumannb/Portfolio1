@@ -136,7 +136,7 @@ a img {outline : none;}
     width: 100%;
     background-color: #fcfaf8;
     min-height: 100vh;
-    padding-bottom: 10vh;
+    /* padding-bottom: 10vh;   bottom extra space */
 }
 
 /* Nav Section */
