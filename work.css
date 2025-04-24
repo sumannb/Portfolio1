@@ -717,6 +717,7 @@ nav a:hover #line1{
 
     .design-item.tall {
         grid-row: span 1;
+        grid-column: span 3;
     }
 
     .design-overlay {

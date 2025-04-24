@@ -1309,11 +1309,12 @@ hr{
 }
 
 .design-item.large {
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 .design-item.tall {
-    grid-row: span 2;
+    grid-row: span 1;
+    
 }
 
 /* Responsive Design */
@@ -1339,7 +1340,7 @@ hr{
     }
 
     .design-item.tall {
-        grid-row: span 1;
+        grid-row: span 2;
     }
 
     .design-overlay {
@@ -1473,6 +1474,15 @@ hr{
     #footer h1 {
         font-size: 2rem;
     }
+
+
+    
+
+
 }
 
 
+img.custom-img
+{
+    overflow: visible;
+}
